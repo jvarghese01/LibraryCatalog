@@ -31,7 +31,9 @@ public class SearchController {
     
     @RequestMapping("/search")
     public String searchWithView(@RequestParam(value="term") String term, Model model){
+        model.addAttribute("result", searchService.search());
         model.addAttribute("term", term);
+
         return "search";
     }
     
