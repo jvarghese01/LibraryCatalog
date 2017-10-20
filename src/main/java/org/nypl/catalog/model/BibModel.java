@@ -8,6 +8,11 @@ public class BibModel {
 	private String title;
 	private String isbn;
 	private String description;
+	private String publishDate;
+	private String imageUrl;
+	private String author;
+	private String stars;	
+
 	
 	public String getTitle() {
 		return title;
@@ -26,6 +31,30 @@ public class BibModel {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getPublishDate() {
+		return publishDate;
+	}
+	public void setPublishDate(String publishDate) {
+		this.publishDate = publishDate;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public String getStars() {
+		return stars;
+	}
+	public void setStars(String stars) {
+		this.stars = stars;
 	}
 
 }

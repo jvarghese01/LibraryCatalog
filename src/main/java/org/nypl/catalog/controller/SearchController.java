@@ -25,14 +25,17 @@ public class SearchController {
 	
     @ResponseBody
 	@RequestMapping(value = "/search", produces={"application/xml", "application/json"})
-    public Map<String, List<BibModel>> search(@RequestParam(value="term") String name) {
+    public List<BibModel> search(@RequestParam(value="term") String name) {
     		return searchService.search();
     }
     
     @RequestMapping("/search")
     public String searchWithView(@RequestParam(value="term") String term, Model model){
-        model.addAttribute("result", searchService.search());
+        List<BibModel> result = searchService.search();
+    		model.addAttribute("result", result);
         model.addAttribute("term", term);
+        model.addAttribute("results", result.size());
+
 
         return "search";
     }
