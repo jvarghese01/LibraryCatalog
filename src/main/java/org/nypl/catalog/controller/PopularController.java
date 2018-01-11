@@ -19,30 +19,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
-public class SearchController {
+public class PopularController {
 	
 	@Autowired
 	public SearchService searchService;	
 	
     @ResponseBody
-	@RequestMapping(value = "/search", produces={"application/xml", "application/json"})
+	@RequestMapping(value = "/popular", produces={"application/xml", "application/json"})
     public List<BibModel> search(@RequestParam(value="term") String name) throws IOException {
     		return searchService.search();
     }
     
-    @RequestMapping("/search")
-    public String searchWithView(@RequestParam(value="term") String term, Model model) throws IOException{
+    @RequestMapping("/popular")
+    public String searchWithView(Model model) throws IOException{
         List<BibModel> result = searchService.search();
     		model.addAttribute("result", result);
-        model.addAttribute("term", term);
+        //model.addAttribute("term", term);
         model.addAttribute("results", result.size());
 
 
-        return "search";
+        return "popular";
     }
     
     @ResponseBody
-    @RequestMapping(value = "/searchx", produces={"application/xml", "application/json"})
+    @RequestMapping(value = "/popularx", produces={"application/xml", "application/json"})
     public SearchResult search2(@RequestParam(value="term") String name) {
     		SearchResult sr = new SearchResult();
     		BibModel bm = new BibModel();

@@ -11,7 +11,11 @@ public class BibModel {
 	private String publishDate;
 	private String imageUrl;
 	private String author;
-	private String stars;	
+	private String stars;
+	private String formatType;	
+	private String catalogURL;	
+	private String circCount;	
+
 
 	
 	public String getTitle() {
@@ -55,6 +59,24 @@ public class BibModel {
 	}
 	public void setStars(String stars) {
 		this.stars = stars;
+	}
+	public String getFormatType() {
+		return formatType;
+	}
+	public void setFormatType(String formatType) {
+		this.formatType = formatType;
+	}
+	public String getCatalogURL() {
+		return catalogURL;
+	}
+	public void setCatalogURL(String catalogURL) {
+		this.catalogURL = catalogURL;
+	}
+	public String getCircCount() {
+		return circCount;
+	}
+	public void setCircCount(String circCount) {
+		this.circCount = circCount;
 	}
 
 }
